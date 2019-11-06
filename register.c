@@ -81,6 +81,7 @@ int bebidas_add()
     char q_bebida[3];
     char c_bebida[4];
     char confirm;
+    FILE *arq_bebidas;
 
     printf("Digite o nome do produto: ");
     scanf(" %30[^\n]", n_bebida);
@@ -104,6 +105,15 @@ int bebidas_add()
     {
     case 's':
         clear();
+        arq_bebidas = fopen(n_bebida, "w");
+        if(arq_bebidas == NULL)
+            printf("Erro na abertura do arquivo");
+
+        fprintf(arq_bebidas, "Produto: %s                \n", n_bebida);
+        fprintf(arq_bebidas, "Quantidade: %s             \n", q_bebida);
+        fprintf(arq_bebidas, "Codigo: %s                 \n", c_bebida);
+        fclose(arq_bebidas);
+        
         printf("    ----------------PRODUTO REGISTRADO!---------------------\n");
         break;
     
