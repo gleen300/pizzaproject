@@ -75,11 +75,9 @@ int bebidas_menu()
     return 0;
 }
 
+
 int bebidas_add()
 {
-    char n_bebida[30];
-    char q_bebida[3];
-    char c_bebida[4];
     char confirm;
     FILE *arq_bebidas;
 
@@ -105,15 +103,7 @@ int bebidas_add()
     {
     case 's':
         clear();
-        arq_bebidas = fopen(n_bebida, "w");
-        if(arq_bebidas == NULL)
-            printf("Erro na abertura do arquivo");
-
-        fprintf(arq_bebidas, "Produto: %s                \n", n_bebida);
-        fprintf(arq_bebidas, "Quantidade: %s             \n", q_bebida);
-        fprintf(arq_bebidas, "Codigo: %s                 \n", c_bebida);
-        fclose(arq_bebidas);
-        
+        save_bebidas();
         printf("    ----------------PRODUTO REGISTRADO!---------------------\n");
         break;
     

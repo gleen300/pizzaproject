@@ -3,6 +3,7 @@
 #include "menu.c"
 #include "register.c"
 #include "time.c"
+#include "save.c"
 
 
 int main()
