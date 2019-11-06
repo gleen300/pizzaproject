@@ -4,6 +4,7 @@ void    save_bebidas()
 {
     FILE *arq_bebidas;
 
+    strcat(n_bebida, ".txt");
     arq_bebidas = fopen(n_bebida, "w");
         if(arq_bebidas == NULL)
             printf("Erro na abertura do arquivo");
